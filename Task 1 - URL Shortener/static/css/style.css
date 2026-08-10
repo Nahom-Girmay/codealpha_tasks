@@ -1,0 +1,807 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+body {
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+
+    min-height: 100vh;
+    padding: 40px 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 400px;
+    height: 400px;
+
+    top: -150px;
+    left: -150px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    pointer-events: none;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    bottom: -150px;
+    right: -100px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    pointer-events: none;
+}
+
+
+
+/* =========================
+   GENERAL CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 600px;
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.15);
+
+    animation: fadeIn 0.5s ease;
+}
+
+
+/* =========================
+   GENERAL ELEMENTS
+========================= */
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+input {
+    width: 100%;
+
+    padding: 14px;
+    margin: 15px 0;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    background: #1d4ed8;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+hr {
+    margin: 25px 0;
+}
+
+
+/* =========================
+   HOMEPAGE
+========================= */
+
+.home-container {
+    width: 100%;
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+    color: white;
+}
+
+
+/* Brand */
+
+.brand {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 24px;
+    font-weight: 800;
+
+    margin-bottom: 70px;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+
+    background: white;
+    color: #667eea;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+
+/* Hero */
+
+.hero {
+    max-width: 750px;
+    margin: auto;
+
+    animation: fadeUp 0.7s ease;
+}
+
+.badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 16px;
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 72px);
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    margin-bottom: 25px;
+
+    color: white;
+}
+
+.hero h1 span {
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #dbeafe
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    max-width: 550px;
+
+    margin: auto;
+    margin-bottom: 40px;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* =========================
+   URL FORM
+========================= */
+
+.url-form {
+    display: flex;
+
+    gap: 10px;
+
+    padding: 8px;
+
+    background: white;
+
+    border: 2px solid transparent;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.2);
+
+    transition: 0.3s ease;
+}
+
+.url-form:focus-within {
+    border-color: rgba(255, 255, 255, 0.7);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.input-wrapper {
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding-left: 15px;
+}
+
+.link-icon {
+    font-size: 18px;
+}
+
+.input-wrapper input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    margin: 0;
+    padding: 15px 5px;
+
+    font-size: 16px;
+
+    font-family: inherit;
+
+    color: #1e293b;
+
+    background: transparent;
+}
+
+.input-wrapper input::placeholder {
+    color: #94a3b8;
+}
+
+
+/* Shorten button */
+
+.url-form button {
+    width: auto;
+
+    min-width: 160px;
+
+    padding: 0 24px;
+
+    border-radius: 11px;
+
+    white-space: nowrap;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.url-form button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+.url-form button:active {
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+.url-form button span {
+    display: inline-block;
+
+    margin-left: 8px;
+
+    font-size: 20px;
+
+    transition: transform 0.2s ease;
+}
+
+.url-form button:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    margin-top: 30px;
+}
+
+.features div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 14px;
+
+    transition: transform 0.2s ease;
+}
+
+.features div:hover {
+    transform: translateY(-3px);
+}
+
+.features strong {
+    color: white;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 80px;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESULT PAGE
+========================= */
+
+.result-card {
+    width: 100%;
+    max-width: 650px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.15);
+
+    color: #222;
+
+    animation: fadeIn 0.5s ease;
+}
+
+
+/* Success icon */
+
+.success-icon {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #dcfce7;
+    color: #16a34a;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    animation: popIn 0.5s ease;
+}
+
+.result-card h1 {
+    color: #222;
+
+    margin-bottom: 10px;
+
+    font-size: 32px;
+}
+
+.result-subtitle {
+    color: #64748b;
+
+    margin-bottom: 30px;
+}
+
+
+/* URL boxes */
+
+.url-box {
+    text-align: left;
+
+    padding: 18px;
+
+    margin-bottom: 15px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+}
+
+.label {
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #64748b;
+
+    text-transform: uppercase;
+}
+
+.original-url {
+    margin: 0;
+
+    color: #334155;
+
+    word-break: break-all;
+}
+
+.url-box .short-link {
+    margin: 0;
+
+    padding: 0;
+
+    background: none;
+
+    text-align: left;
+
+    display: block;
+
+    word-break: break-all;
+
+    color: #2563eb;
+}
+
+
+/* Highlight short URL */
+
+.url-box:has(.short-link) {
+    border: 2px solid #667eea;
+
+    background: #f8f7ff;
+}
+
+.url-box:has(.short-link) .label {
+    color: #667eea;
+}
+
+.url-box:has(.short-link) .short-link {
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #4f46e5;
+}
+
+
+/* Result buttons */
+
+.result-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.result-buttons button,
+.open-button {
+    flex: 1;
+
+    width: auto;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+
+/* Copy button */
+
+.result-buttons button {
+    background: #667eea;
+
+    color: white;
+
+    border: none;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.result-buttons button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.result-buttons button:active {
+    transform: translateY(0);
+}
+
+
+/* Open button */
+
+.open-button {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+
+    background: #e2e8f0;
+
+    color: #334155;
+}
+
+.open-button:hover {
+    transform: translateY(-2px);
+
+    background: #cbd5e1;
+}
+
+
+/* Create another */
+
+.create-another {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   404 PAGE
+========================= */
+
+.error-code {
+    font-size: 72px;
+
+    font-weight: 800;
+
+    color: #667eea;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes popIn {
+
+    0% {
+        opacity: 0;
+
+        transform: scale(0.5);
+    }
+
+    70% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 650px) {
+
+    /* Homepage */
+
+    .brand {
+        margin-bottom: 45px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .url-form {
+        flex-direction: column;
+
+        padding: 8px;
+    }
+
+    .input-wrapper {
+        padding: 5px 10px;
+    }
+
+    .url-form button {
+        width: 100%;
+
+        min-height: 52px;
+    }
+
+    .features {
+        gap: 18px;
+    }
+
+
+    /* Result page */
+
+    .result-card {
+        padding: 30px 20px;
+    }
+
+    .result-card h1 {
+        font-size: 27px;
+    }
+
+    .result-buttons {
+        flex-direction: column;
+    }
+
+    .result-buttons button,
+    .open-button {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Link Not Found - SnapURL</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <main class="home-container">
+
+        <div class="brand">
+
+            <div class="logo">
+                S
+            </div>
+
+            <span>SnapURL</span>
+
+        </div>
+
+
+        <section class="result-card">
+
+            <div class="error-code">
+                404
+            </div>
+
+            <h1>
+                Link not found
+            </h1>
+
+            <p class="result-subtitle">
+                The short link you're looking for doesn't exist
+                or may have been removed.
+            </p>
+
+            <a
+                class="open-button"
+                href="/">
+
+                ← Back to SnapURL
+
+            </a>
+
+        </section>
+
+
+        <footer>
+
+            <p>
+                Built with Flask & Python
+            </p>
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

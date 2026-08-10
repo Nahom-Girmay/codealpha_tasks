@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Short Link - SnapURL</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}">
+    </script>
+
+</head>
+
+
+<body>
+
+    <main class="home-container">
+
+        <div class="brand">
+
+            <div class="logo">
+                S
+            </div>
+
+            <span>SnapURL</span>
+
+        </div>
+
+
+        <section class="result-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <h1>
+                Your link is ready!
+            </h1>
+
+
+            <p class="result-subtitle">
+                Your long URL has been shortened successfully.
+            </p>
+
+
+            <div class="url-box">
+
+                <p class="label">
+                    Original URL
+                </p>
+
+                <p class="original-url">
+                    {{ original_url }}
+                </p>
+
+            </div>
+
+
+            <div class="url-box">
+
+                <p class="label">
+                    Your Short URL
+                </p>
+
+                <a
+                    id="short-link"
+                    class="short-link"
+                    href="/{{ short_code }}">
+
+                    {{ request.host }}/{{ short_code }}
+
+                </a>
+
+            </div>
+
+
+            <div class="result-buttons">
+
+                <button
+                    id="copy-button"
+                    onclick="copyLink()">
+
+                    Copy Link
+
+                </button>
+
+
+                <a
+                    class="open-button"
+                    href="/{{ short_code }}">
+
+                    Open Link
+
+                </a>
+
+            </div>
+
+
+            <a
+                class="create-another"
+                href="/">
+
+                ← Shorten another URL
+
+            </a>
+
+        </section>
+
+
+        <footer>
+
+            <p>
+                Built with Flask & Python
+            </p>
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

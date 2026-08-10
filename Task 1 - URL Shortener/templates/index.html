@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SnapURL - URL Shortener</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+    <main class="home-container">
+
+        <div class="brand">
+
+            <div class="logo">
+                S
+            </div>
+
+            <span>SnapURL</span>
+
+        </div>
+
+
+        <section class="hero">
+
+            <div class="badge">
+                ✦ Simple & Fast URL Shortener
+            </div>
+
+
+            <h1>
+                Make your links
+                <span>short & simple.</span>
+            </h1>
+
+
+            <p class="subtitle">
+                Turn long URLs into short, easy-to-share links
+                in seconds.
+            </p>
+
+
+            <form action="/shorten" method="POST" class="url-form">
+
+                <div class="input-wrapper">
+
+                    <span class="link-icon">🔗</span>
+
+                    <input
+                        type="url"
+                        name="url"
+                        placeholder="Paste your long URL here..."
+                        required>
+
+                </div>
+
+
+                <button type="submit">
+
+                    Shorten URL
+                    <span>→</span>
+
+                </button>
+
+            </form>
+
+
+            <div class="features">
+
+                <div>
+                    <strong>⚡</strong>
+                    <span>Fast</span>
+                </div>
+
+                <div>
+                    <strong>🔒</strong>
+                    <span>Simple</span>
+                </div>
+
+                <div>
+                    <strong>✓</strong>
+                    <span>Free</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            <p>
+                Built with Flask & Python
+            </p>
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
